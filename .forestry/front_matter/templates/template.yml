@@ -1,4 +1,29 @@
 ---
 label: template
 hide_body: true
-fields: []
+fields:
+- name: layout
+  type: text
+  config:
+    required: false
+  label: layout
+  default: default
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: nav_order
+  type: number
+  label: nav_order
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
+- name: has_children
+  type: boolean
+  label: has_children
+  default: false
