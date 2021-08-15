@@ -15,8 +15,8 @@
 # in the templates via {{ site.myvariable }}.
 title: Java
 description: Java Learning
-baseurl: "/java-learn" # the subpath of your site, e.g. /blog
-url: "http://blog.magicworldz.de" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://java.magicworldz.de" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: pmarsceill/just-the-docs
 
 permalink: pretty
