@@ -1,5 +1,5 @@
 ---
-label: child
+label: Child
 hide_body: true
 fields:
 - name: layout
@@ -11,7 +11,7 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: title
 - name: nav_order
   type: number
@@ -20,7 +20,7 @@ fields:
   default: 0
   required: true
   config:
-    min: 
+    min: 2
     max: 
     step: 
     required: true
