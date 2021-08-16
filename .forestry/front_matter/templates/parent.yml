@@ -1,0 +1,19 @@
+---
+label: Parent
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: title
+  label: title
+- type: number
+  name: nav_order
+  label: nav_order
+- type: boolean
+  name: has_children
+  label: has_children
+- type: text
+  name: permalink
+  label: permalink
