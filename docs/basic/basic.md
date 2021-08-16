@@ -16,7 +16,7 @@ Besides this, I do think Java is a good language and it's popular in many indust
 
 ## Basic Characters
 
-Java or Java platforms have some features which differ from C/C++, for example.
+Java or Java platforms have some features which differ from other languages, for example.
 
 * GC  
   In C/C++, we need to manually manage the memory, and we may get memory leaks, illegal pointers during the application runtime, which is painful for many beginners.  
