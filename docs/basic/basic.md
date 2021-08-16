@@ -10,7 +10,7 @@ permalink: "/docs/basic"
 
 Java is a write-once, runs every language, but also it's a great platform that has a good mature ecosystem. That allows us to design and develop an application or product with many existing components and libraries. But also, after about 20 years of development, Java, in some words, it becomes a bloated platform, compared with other new languages such as Golang.
 
-One example is that when I write a simple customize HTTP proxy with Golang, it's very lightweight with zero dependence, but with Java, I need to set up Spring/Spring boot, which turns the project become much complicated.
+One example is that when I write a simple customize HTTP proxy with Golang, it's very lightweight with zero external dependence, but with Java, I need to set up Spring/Spring boot, which turns the project become much complicated.
 
 Besides this, I do think Java is a good language and it's popular in many industry areas.
 
@@ -43,4 +43,42 @@ Java or Java platforms have some features which differ from C/C++, for example.
 
 ## Java Platform Overview
 
-TBD
+### Language features
+
+1. Object-Oriented
+2. Reflection
+3. Generic
+
+### Built-In Libraries
+
+1. Core Libraries
+   * IO/NIO
+   * Network
+   * ThreadPool, Executors
+   * Collection, Collection Utils
+2. Security Libraries
+3. jdk.management
+4. Third-party
+
+### JVM
+
+1. GC
+2. Runtime
+3. JIT
+4. Accessibility
+   * JFR
+
+### Java Ecosystems
+
+1. Spring/Spring Boot
+2. Hadoop
+3. Kafka
+4. ElasticSearch
+5. Maven
+6. Gradle
+
+### Tools
+
+1. Accessibility: jlink, jar, jdeps
+2. Compiler: javac, sjavac
+3. Diagnostic: jmap, jps, jstack, jconsole, jcmd, jhsdb, visual vm
