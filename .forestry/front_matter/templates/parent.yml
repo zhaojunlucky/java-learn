@@ -5,6 +5,7 @@ fields:
 - type: text
   name: layout
   label: layout
+  default: default
 - type: text
   name: title
   label: title
@@ -14,6 +15,8 @@ fields:
 - type: boolean
   name: has_children
   label: has_children
+  default: true
 - type: text
   name: permalink
   label: permalink
+  default: "/docs/"
