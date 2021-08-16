@@ -1,5 +1,5 @@
 ---
-label: template
+label: child
 hide_body: true
 fields:
 - name: layout
@@ -23,7 +23,13 @@ fields:
     min: 
     max: 
     step: 
+    required: true
 - name: has_children
   type: boolean
   label: has_children
   default: false
+- name: parent
+  type: text
+  config:
+    required: true
+  label: parent
