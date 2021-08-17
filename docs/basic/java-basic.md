@@ -32,14 +32,26 @@ Java or Java platforms have some features which differ from other languages, for
   * During the GC, it will do stop the world in a short time
   * The GC may cause the memory fragmentation
   * As GC will maintain a data structure, it will consume more memory
+  
 * Pure Object-Oriented
 
   Java is a pure object-oriented language, that to say, a class is required even if we write a hello world program.  
   In the good aspect, it makes sure everyone who writes the code must follow the Java standard, which can set the lower limit.  
   But on the other hand, it also makes the code become wordy, doctrine.  
   However, Java also evolves many new features such as lambda, interface default methods, and stream.
+  
 * Static Compile  
   This is the same as other languages such as C/C++, Golang. I really like static compile language, which can avoid any compile-time errors. That's why a always prefer Java, Golang that python.
+  
+* Reflection
+  Reflection given the ability to get an object's data during the runtime. 
+  For example, 
+
+  * the database driver use `class.ForName("com.mysql.Driver")` to register the database driver
+  * dynamic unload/load class during the runtime
+
+* Java Dynamic Proxy
+  
 
 ## Java Platform Overview
 
@@ -76,6 +88,10 @@ Java or Java platforms have some features which differ from other languages, for
 4. ElasticSearch
 5. Maven
 6. Gradle
+7. Other languages run on Jvm
+    Closure, Scala, Groovy, Kotlin, JRuby, Jython and so on.
+8. AOT
+     [GraalVM](https://www.graalvm.org/)
 
 ### Tools
 
