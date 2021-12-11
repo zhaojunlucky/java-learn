@@ -16,6 +16,28 @@ In the Java world, there are exceptions and errors that can be thrown by the run
   * An Exception can be a checked exception or an unchecked exception. The checked exception must be explicitly caught, throws in the application code, it is a compile-time check. The unchecked exception is a kind of `RuntimeException` , such as `NullpointerException` and `ArrayIndexOutOfBoundsException`. They usually are a logic error that can be avoided, and they can be caught on demand and are not enforced at the runtime.
 * However, Error is a kind of abnormal state that should not happen, once it happened, it will cause the application in an abnormal or unrecoverable state. It should not be caught by the application code, such as `OutOfMemoryError` or `ClassNotFoundError`.
 
-# The Exception Class Design
+# How to Catch the Exception
+
+## Exception Class Diagram in Java
 
 ![](/uploads/exception-class.webp)
+
+> NoClassFoundError VS NoClassFoundException
+>
+> 
+
+## Example to Throw or Catch Exception
+
+```java
+public ExceptionTest {
+  // explicitly handle the checked exception
+  public void readFile(String file) throws FileNotFoundException {
+    // read file
+  } 
+  
+  public static void main(String[] args) {
+    
+  }
+}
+```
+
