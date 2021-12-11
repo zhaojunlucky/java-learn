@@ -33,5 +33,3 @@ fields:
   config:
     required: true
   label: parent
-pages:
-- docs/basic/java-basic-data-types.md
