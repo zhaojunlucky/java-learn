@@ -22,9 +22,80 @@ In the Java world, there are exceptions and errors that can be thrown by the run
 
 ![](/uploads/exception-class.webp)
 
-> NoClassFoundError VS NoClassFoundException
->
-> 
+### NoClassDefFoundError Example
+
+1. Source code
+
+   ```java
+   public class A {
+       public static void main(String[]args) {
+        var b = new B();
+      }
+   
+   static class B {
+   }
+   }
+   ```
+
+2. Compile A.java
+
+   ```bash
+   > javac A.java
+   ```
+
+   Will get two compiled class.
+
+   ```bash
+   A.class
+   A$B.class
+   ```
+
+3. Remove compiled class `A$B.class`, then run `java A`, will got `NoClassDefFoundError`
+   
+   ```bash
+   > java A
+   Exception in thread "main" java.lang.NoClassDefFoundError: A$B
+           at A.main(A.java:3)
+   Caused by: java.lang.ClassNotFoundException: A$B
+           at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+           at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+           at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+           ... 1 more
+   ```
+   
+   
+
+### ClassNotFoundException Example
+
+Run the following source code will get `ClassNotFoundException`.
+
+```java
+public class A {
+    public static void main(String[]args) throws ClassNotFoundException {
+     Class.forName("B");
+   }
+
+}
+
+
+```
+
+Run with `java A.java`.
+
+```bash
+> java A.java
+Exception in thread "main" java.lang.ClassNotFoundException: B
+        at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+        at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+        at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+        at jdk.compiler/com.sun.tools.javac.launcher.Main$MemoryClassLoader.loadClass(Main.java:600)
+        at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+        at java.base/java.lang.Class.forName0(Native Method)
+        at java.base/java.lang.Class.forName(Class.java:375)
+        at A.main(A.java:3)
+```
+
+
 
 ## Example to Throw or Catch Exception
 
