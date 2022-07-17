@@ -16,7 +16,7 @@
 title: Java
 description: Java Learning
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://java.magicworldz.de" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://java.magicworldz.dev" # the base hostname & protocol for your site, e.g. http://example.com
 remote_theme: pmarsceill/just-the-docs
 
 permalink: pretty
