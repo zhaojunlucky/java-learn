@@ -13,7 +13,11 @@ In the Java world, there are exceptions and errors that can be thrown by the run
 
 * Both of them inherits from the `Throwable`. In Java, only `Throwable` can be thrown and caught, it is the basic mechanism in Java exception handling.
 * The exception is expected during the application runtime, and it can and should be caught for processing. This is a possible code execution route.
-  * An Exception can be a checked exception or an unchecked exception. The checked exception must be explicitly caught, throws in the application code, it is a compile-time check. The unchecked exception is a kind of `RuntimeException` , such as `NullpointerException` and `ArrayIndexOutOfBoundsException`. They usually are a logic error that can be avoided, and they can be caught on demand and are not enforced at the runtime.
+  * An Exception can be a checked exception or an unchecked exception. 
+  	* The checked exception must be explicitly caught, throws in the application code, it is a compile-time check 
+      Checked exception is designed to recover from the exception. As a exception designer, we usually have enough information to classify the exception.
+    * The unchecked exception is a kind of `RuntimeException` , such as `NullpointerException` and `ArrayIndexOutOfBoundsException` 
+      They usually are a logic error that can be avoided, and they can be caught on demand and are not enforced at the runtime.
 * However, Error is a kind of abnormal state that should not happen, once it happened, it will cause the application in an abnormal or unrecoverable state. It should not be caught by the application code, such as `OutOfMemoryError` or `ClassNotFoundError`.
 
 # How to Catch the Exception
@@ -36,22 +40,20 @@ In the Java world, there are exceptions and errors that can be thrown by the run
    }
    }
    ```
-
 2. Compile A.java
 
    ```bash
    > javac A.java
    ```
 
-   Will get two compiled class.
+   Will get two compiled classes.
 
    ```bash
    A.class
    A$B.class
    ```
+3. Remove compiled class `A$B.class`, then run `java A`, will get `NoClassDefFoundError`
 
-3. Remove compiled class `A$B.class`, then run `java A`, will got `NoClassDefFoundError`
-   
    ```bash
    > java A
    Exception in thread "main" java.lang.NoClassDefFoundError: A$B
@@ -62,8 +64,6 @@ In the Java world, there are exceptions and errors that can be thrown by the run
            at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
            ... 1 more
    ```
-   
-   
 
 ### ClassNotFoundException Example
 
@@ -76,7 +76,6 @@ public class A {
    }
 
 }
-
 
 ```
 
@@ -95,10 +94,9 @@ Exception in thread "main" java.lang.ClassNotFoundException: B
         at A.main(A.java:3)
 ```
 
-
-
 ## Example to Throw or Catch Exception
 
+### Checked Exception
 ```java
 public ExceptionTest {
   // explicitly handle the checked exception
@@ -112,3 +110,71 @@ public ExceptionTest {
 }
 ```
 
+### try-with-resources and Multiple Catches
+```java
+try (BufferedReader br = new BufferedReader(…);
+     BufferedWriter writer = new BufferedWriter(…)) {// Try-with-resources
+// do something
+catch ( IOException | XEception e) {// Multiple catch
+   // Handle it
+} 
+
+```
+
+## Best Practices
+
+### Don't Catch Exception or RuntimeException
+
+Catch specfic exception instead of the above too generic exceptions.
+```java
+
+try {
+  // business code
+  // …
+  Thread.sleep(1000L);
+} catch (Exception e) {
+  // Ignore it
+}
+```
+
+### Don't Swallow Exception
+
+In the following example, when exception occurs in the method `doWork`, the method `main` can't know what is the cause.
+```java
+
+public void doWork() {
+  try {
+     // 业务代码
+     // …
+  } catch (IOException e) {
+      e.printStackTrace();
+  }
+}
+
+public static void main(String[] args) {
+	doWork()
+}
+```
+
+### Throw Early, Catch Late
+
+In snippt 1, in `new FileInputStream` will throw `NullPointerException`, it's hard to find the root cause when exception occurs compared with the sniipt 2.
+```java
+
+// snippt 1
+public void readPreferences(String fileName){
+   //...perform operations... 
+  InputStream in = new FileInputStream(fileName);
+   //...read the preferences file...
+}
+
+
+// snippt 2
+public void readPreferences(String filename) {
+  Objects. requireNonNull(filename); // throw early
+  //...perform other operations... 
+  InputStream in = new FileInputStream(filename);
+   //...read the preferences file...
+}
+
+```
