@@ -178,3 +178,22 @@ public void readPreferences(String filename) {
 }
 
 ```
+
+Catch late enforce author to think anout how to deal with exception when caught it, there are two ways,
+  * Swallow exception
+    This causes the root cause hard to find
+  * Throw the exception
+  * Create a new rxception and keep the original cause
+  
+ 
+ ### Think About When Trying to Define a Custom Exception
+ 
+  * Cusotm Checked Exception
+    * Checked exception is designed to recover the program when exception occurs. But most of the cases are unable to recover
+    * It's not compatiable with funcational programming
+  * Don't pnclude sensitive information
+  * Try-catch and new exception will have extra performace Cost
+   New Exception takes time to make snapshot of the stack trace
+  * Check exception in the system when performance degrad
+  * How to handle exception in thread executor?
+    Log the exception into log.
