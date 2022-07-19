@@ -183,7 +183,6 @@ Catch late enforce author to think anout how to deal with exception when caught 
     This causes the root cause hard to find
   * Throw the exception
   * Create a new rxception and keep the original cause
-  
  
  ### Think About When Trying to Define a Custom Exception
  
