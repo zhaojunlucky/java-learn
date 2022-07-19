@@ -185,7 +185,6 @@ Catch late enforce author to think anout how to deal with exception when caught 
   * Create a new rxception and keep the original cause
  
  ### Think About When Trying to Define a Custom Exception
- 
   * Cusotm Checked Exception
     * Checked exception is designed to recover the program when exception occurs. But most of the cases are unable to recover
     * It's not compatiable with funcational programming
