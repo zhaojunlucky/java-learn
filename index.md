@@ -8,7 +8,7 @@ permalink: "/"
 ---
 # Why this
 
-Summary what learnt and used in daily work.
+Summary what learned and used in daily work.
 
 # JDK New Features
 
