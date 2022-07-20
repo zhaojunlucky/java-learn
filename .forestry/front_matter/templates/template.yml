@@ -33,3 +33,9 @@ fields:
   config:
     required: true
   label: parent
+- name: classes
+  type: text
+  config:
+    required: false
+  label: classes
+  default: wide

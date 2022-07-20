@@ -22,3 +22,9 @@ fields:
   name: permalink
   label: permalink
   default: "/docs/"
+- name: classes
+  type: text
+  config:
+    required: false
+  label: classes
+  default: wide
